@@ -1,7 +1,7 @@
 {
-  "name": "invoice-new",
+  "name": "invoice-api",
   "version": "1.0.0",
-  "description": "README FILE FOR NEW INVOICE APPLICATION",
+  "description": "INVOICE APPLICATION API",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon app.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WebStarLink/INVOICE-NEW.git"
+    "url": "git+https://github.com/WebStarLink/INVOICE-API.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WebStarLink/INVOICE-NEW/issues"
+    "url": "https://github.com/WebStarLink/INVOICE-API/issues"
   },
-  "homepage": "https://github.com/WebStarLink/INVOICE-NEW#readme",
+  "homepage": "https://github.com/WebStarLink/INVOICE-API#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
