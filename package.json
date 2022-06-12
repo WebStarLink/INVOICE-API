@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/WebStarLink/INVOICE-API.git"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
