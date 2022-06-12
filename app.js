@@ -12,8 +12,8 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: 'invoice.by',
     credentials: true,
+    origin: process.env.CLIENT_URL,
   }));
 app.use('/api', routes)
 app.use(errorMiddleware)
