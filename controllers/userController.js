@@ -21,7 +21,7 @@ class UserController {
         try {
             const {email, password} = req.body
             const userData = await userService.login(email, password)
-            res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true, secure: true})
+            res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: false})
             console.log("REQ COOKIE", req.cookie);
             console.log("DOMAIN", process.env.CLIENT_URL)
             console.log("RES COOKIE", req.cookie);
