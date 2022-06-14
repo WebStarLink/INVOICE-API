@@ -2,7 +2,7 @@
 
 ## Develop mode
 
-For correct running application on **localhost** you need to create **.env** file with following content inside (example):
+For correct running application on **localhost** you need to create **.env** at root folder file with following content inside (example):
 
 ```
 PORT = 5050
