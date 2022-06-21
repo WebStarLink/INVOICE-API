@@ -7,7 +7,12 @@ const UserSchema = new Schema({
     activationLink: {type: String},
     profile: {
         legal: {type: String},
-        itn: {type: String}
+        itn: {type: String},
+        address: {type: String},
+        iban: {type: String},
+        bank: {type: String},
+        bic: {type: String},
+        phone: {type: String},
     }
 })
 
