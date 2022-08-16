@@ -23,6 +23,14 @@ class ClientService {
 
         return clientDto
     }
+
+    async getClients(id) {
+        const clients = await ClientModel.find({ owner: id })
+        if (!clients) {
+            throw ApiError.BadRequest(`There is no added clients for this account`)
+        } 
+        return clients
+    }
 }
 
 module.exports = new ClientService()
