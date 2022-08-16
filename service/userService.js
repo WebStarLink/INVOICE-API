@@ -77,7 +77,6 @@ class UserService {
     }
 
     async getAllUsers(id) {
-        console.log(id);
         const users = await UserModel.findById({ _id: ObjectId(id) })
         return users
     }

@@ -12,6 +12,16 @@ class ClientController {
             next(error)
         }
     }
+    async clients(req, res, next) {
+        try {
+            const { id } = req.user
+            const clients = await clientService.getClients(id)
+
+            return res.json(clients)
+        } catch (error) {
+            next(error)
+        }
+    }
 }
 
 module.exports = new ClientController()
