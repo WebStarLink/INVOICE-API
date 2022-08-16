@@ -17,5 +17,6 @@ routes.get('/refresh', UserController.refresh)
 routes.get('/users', authMiddleware, UserController.users)
 
 routes.post('/client', authMiddleware, clientController.create)
+routes.get('/clients', authMiddleware, clientController.clients)
 
 module.exports = routes
