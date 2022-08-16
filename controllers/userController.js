@@ -9,9 +9,11 @@ class UserController {
             if (!errors.isEmpty()) {
                 return next(ApiError.BadRequest('Validation error', errors.array()))
             }
-            const {email, password} = req.body
+
+            const { email, password } = req.body
             const userData = await userService.registration(email, password)
             res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true, sameSite: 'none', secure: true})
+
             return res.json(userData)
         } catch (error) {
             next(error);
@@ -22,9 +24,6 @@ class UserController {
             const {email, password} = req.body
             const userData = await userService.login(email, password)
             res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true, sameSite: 'none', secure: true})
-            console.log("REQ COOKIE", req.cookie);
-            console.log("DOMAIN", process.env.CLIENT_URL)
-            console.log("RES COOKIE", req.cookie);
             return res.json(userData)
             
         } catch (error) {
@@ -70,9 +69,10 @@ class UserController {
     }
     async profile(req, res, next) {
         try {
-            const id = req.user.id
-            const data = req.body
-            const profile = await userService.updateProfile(id, data)
+            const { id } = req.user
+            const { body } = req
+            const profile = await userService.updateProfile(id, body)
+            
             return res.json(profile)
         } catch (error) {
             next(error)

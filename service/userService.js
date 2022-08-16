@@ -82,11 +82,12 @@ class UserService {
         return users
     }
 
-    async updateProfile(id, data) {
-        const profile = await UserModel.updateOne({ _id: ObjectId(id) }, {$set: {"profile": data}})
+    async updateProfile(id, body) {
+        const profile = await UserModel.updateOne({ _id: ObjectId(id) }, {$set: {"profile": body}})
         if (!profile) {
             throw ApiError.BadRequest("User not found")
         }
+        
         const user = await UserModel.findById({ _id: ObjectId(id) })
         return user
     }

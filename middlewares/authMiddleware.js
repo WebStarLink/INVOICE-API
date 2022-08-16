@@ -1,7 +1,7 @@
 const ApiError = require("../exceptions/apiError")
 const tokenService = require("../service/tokenService")
 
-module.exports = function (req, res, next) {
+module.exports = (req, res, next) => {
     try {
         const authHeader = req.headers.authorization
         if (!authHeader) {
