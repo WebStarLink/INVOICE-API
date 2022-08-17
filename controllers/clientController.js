@@ -22,6 +22,16 @@ class ClientController {
             next(error)
         }
     }
+    async remove(req, res, next) {
+        const { id } = req.body
+        try {
+            const removed = await clientService.removeClient(id)
+
+            return res.json(removed)
+        } catch (error) {
+            next(error)
+        }
+    }
 }
 
 module.exports = new ClientController()

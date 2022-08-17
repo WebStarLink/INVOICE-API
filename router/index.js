@@ -18,5 +18,6 @@ routes.get('/users', authMiddleware, UserController.users)
 
 routes.post('/client', authMiddleware, clientController.create)
 routes.get('/clients', authMiddleware, clientController.clients)
+routes.delete('/remove', authMiddleware, clientController.remove)
 
 module.exports = routes
