@@ -31,6 +31,12 @@ class ClientService {
         } 
         return clients
     }
+
+    async removeClient(id) {
+        const removed = await ClientModel.deleteOne({ _id: id })
+               
+        return removed
+    }
 }
 
 module.exports = new ClientService()
