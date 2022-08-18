@@ -5,10 +5,11 @@ class ClientController {
         try {
             const { body } = req
             const { id } = req.user
-            const profile = await clientService.createClient(body, id)
+            const client = await clientService.createClient(body, id)
 
-            return res.json(profile)
+            return res.json(client)
         } catch (error) {
+            console.log(error);
             next(error)
         }
     }
@@ -18,6 +19,16 @@ class ClientController {
             const clients = await clientService.getClients(id)
 
             return res.json(clients)
+        } catch (error) {
+            next(error)
+        }
+    }
+    async remove(req, res, next) {
+        const { id } = req.body
+        try {
+            const removed = await clientService.removeClient(id)
+
+            return res.json(removed)
         } catch (error) {
             next(error)
         }

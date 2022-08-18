@@ -1,5 +1,5 @@
 module.exports = class ClientDto {
-    id; 
+    _id; 
     legal;
     itn;
     address;
@@ -14,7 +14,7 @@ module.exports = class ClientDto {
     owner
 
     constructor(model) {
-        this.id = model._id
+        this._id = model._id
         this.legal = model.legal
         this.itn = model.itn
         this.address = model.address
