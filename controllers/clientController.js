@@ -5,10 +5,11 @@ class ClientController {
         try {
             const { body } = req
             const { id } = req.user
-            const profile = await clientService.createClient(body, id)
+            const client = await clientService.createClient(body, id)
 
-            return res.json(profile)
+            return res.json(client)
         } catch (error) {
+            console.log(error);
             next(error)
         }
     }

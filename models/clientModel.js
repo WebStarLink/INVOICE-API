@@ -1,10 +1,10 @@
 const {Schema, model} = require('mongoose')
 
 const ClientSchema = new Schema({
-    legal: {type: String, unique: true, required: true},
-    itn: {type: String, unique: true, required: true},
+    legal: {type: String, required: true},
+    itn: {type: String, required: true},
     address: {type: String},
-    iban: {type: String, unique: true, required: true},
+    iban: {type: String, required: true},
     bank: {type: String},
     bic: {type: String},
     phone: {type: String},
